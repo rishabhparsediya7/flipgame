@@ -1,7 +1,51 @@
 import Confetti from "react-confetti";
 import "./App.css";
 import { useState, useEffect, useRef } from "react";
+import apple from "/apple.png";
+import mango from "/mango.png";
+import banana from "/banana.png";
+import watermelon from "/watermelon.png";
+import peach from "/peach.png";
+import kiwi from "/kiwi.png";
+import strawberry from "/strawberry.png";
+import pomegranate from "/pomegranate.png";
+
 export default function App() {
+  const imagesArray = [
+    {
+      name: "apple",
+      image: apple,
+    },
+    {
+      name: "banana",
+      image: banana,
+    },
+    {
+      name: "mango",
+      image: mango,
+    },
+    {
+      name: "kiwi",
+      image: kiwi,
+    },
+    {
+      name: "strawberry",
+      image: strawberry,
+    },
+    {
+      name: "watermelon",
+      image: watermelon,
+    },
+    {
+      name: "peach",
+      image: peach,
+    },
+    {
+      name: "pomegranate",
+      image: pomegranate,
+    },
+  ];
+
   const [height, setHeight] = useState(window.innerHeight);
   const [width, setWidth] = useState(window.innerWidth);
   const [timer, setTimer] = useState(10);
@@ -108,14 +152,32 @@ export default function App() {
               key={index}
               className="flip-box"
             >
-              <h1 style={{ display: display[index] ? "block" : "none" }}>
-                {flip}
-              </h1>
+              <img
+                style={{
+                  display: display[index] ? "block" : "none",
+                  height: "50px",
+                  width: "50px",
+                }}
+                src={imagesArray[flip].image}
+                alt={imagesArray[flip].name}
+              />
+              <h1 style={{ display: "none" }}>{flip}</h1>
             </div>
           ))}
       </div>
-      {turn === "1" && <h1>Chose first Number</h1>}
-      {turn === "2" && <h1>Chose second Number</h1>}
+      {getWinner() ? (
+        <h1 style={{ color: "white" }}>Yayyy! We solved this!</h1>
+      ) : (
+        <div>
+          {turn === "1" && (
+            <h1 style={{ color: "white" }}>Chose first symbol</h1>
+          )}
+          {turn === "2" && (
+            <h1 style={{ color: "white" }}>Chose second symbol</h1>
+          )}
+        </div>
+      )}
+
       {getWinner() ? (
         <div>
           <Confetti width={width} height={height} />{" "}

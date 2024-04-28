@@ -4,7 +4,7 @@
   font-style: normal;
 }
 body {
-  background-color: #bebebe;
+  background-color: rgb(27, 26, 26);
 }
 .App {
   font-family: sans-serif;
@@ -23,7 +23,7 @@ body {
   gap: 10px;
 }
 .flip-box {
-  background-color: rgb(27, 26, 26);
+  background-color: #252525;
   border-radius: 10px;
   color: white;
   display: flex;
@@ -31,6 +31,10 @@ body {
   align-items: center;
   font-size: 10px;
   cursor: pointer;
+}
+.flip-box:hover {
+  border: 1px solid rgb(114, 114, 241);
+  border-radius: 10px;
 }
 .flip-box h1 {
   display: none;
