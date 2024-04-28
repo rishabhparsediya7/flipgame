@@ -1,0 +1,37 @@
+* {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  background-color: #bebebe;
+}
+.App {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.box {
+  width: 100%;
+  max-width: 200px;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: repeat(4, 80px);
+  grid-template-columns: repeat(4, 80px);
+  gap: 10px;
+}
+.flip-box {
+  background-color: rgb(27, 26, 26);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  cursor: pointer;
+}
+.flip-box h1 {
+  display: none;
+}
